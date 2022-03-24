@@ -56,6 +56,10 @@ $numDepartElem = $nbElemPage * $_GET['numPage'] - $nbElemPage;
 //si l'utilisateur change le numéro de page vers un nombre trop grand (sans données donc), redirige vers la dernière page contenant des données
 verifLastPage($mysqlClient, $tableName, $nbElemPage, $numDepartElem, $nbPageData);
 
+if(!file_exists($cheminDest)){
+    mkdir($cheminDest);
+}
+
 
 //affiche un message en tête de page suivant la réussite ou non de l'upload grâce à un paramètre présent dans l'url
 if(isset($_GET["uploadSuccess"])){
