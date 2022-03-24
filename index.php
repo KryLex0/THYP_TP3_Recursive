@@ -59,18 +59,23 @@ verifLastPage($mysqlClient, $tableName, $nbElemPage, $numDepartElem, $nbPageData
 
 //affiche un message en tête de page suivant la réussite ou non de l'upload grâce à un paramètre présent dans l'url
 if(isset($_GET["uploadSuccess"])){
-    if($_GET["uploadSuccess"] == "true"){
-        echo "<p style='text-align:center;background-color:lightgreen;font-size:30px;'>Upload du fichier réussit.</p>";
-    }elseif($_GET["uploadSuccess"] == "false"){
-        echo "<p style='text-align:center;background-color:yellow;font-size:30px;'>L'image est déjà présente dans la BDD.</p>";
-    }elseif($_GET["uploadSuccess"] == "extension"){
-        echo "<p style='text-align:center;background-color:orange;font-size:30px;'>Le type de fichier n'est pas prit en charge.</p>";
-    }elseif($_GET["uploadSuccess"] == "error"){
-        echo "<p style='text-align:center;background-color:red;font-size:30px;'>Une erreur est survenue lors de l'upload. Veuillez réessayer.</p>";
-    }elseif($_GET["uploadSuccess"] == "scan"){
-        echo "<p style='text-align:center;background-color:lightblue;font-size:30px;'>L'ensemble des images du dossier ont été scannés.</p>";
+    switch($_GET["uploadSuccess"]){
+        case "true":
+            echo "<p style='text-align:center;background-color:lightgreen;font-size:30px;'>Upload du fichier réussit.</p>";
+            break;
+        case "false":
+            echo "<p style='text-align:center;background-color:yellow;font-size:30px;'>L'image est déjà présente dans la BDD.</p>";
+            break;
+        case "extension":
+            echo "<p style='text-align:center;background-color:orange;font-size:30px;'>Le type de fichier n'est pas prit en charge.</p>";
+            break;
+        case "error":
+            echo "<p style='text-align:center;background-color:red;font-size:30px;'>Une erreur est survenue lors de l'upload. Veuillez réessayer.</p>";
+            break;
+        case "scan":
+            echo "<p style='text-align:center;background-color:lightblue;font-size:30px;'>L'ensemble des images du dossier ont été scannés.</p>";
+            break;
     }
-    
 
 }
 
