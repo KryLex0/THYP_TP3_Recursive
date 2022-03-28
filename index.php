@@ -102,7 +102,7 @@ if(isset($_GET["uploadSuccess"])){
                 <div class="divClassData">
                     <img class="image" src="<?php echo $val["chemin_fichier"] . "/" . $val["nom_fichier"] . "." . $val["extension_fichier"]; ?>" onClick="$(this).toggleClass('zoomed');">
                     <p><strong style="text-decoration: underline;">Nom de l'image:</strong><?php echo(" " . $val["nom_fichier"] . "." . $val["extension_fichier"]); ?></p>
-                    <p><strong style="text-decoration: underline;">Taille de l'image:</strong><?php echo(" " . $val["taille_image"] . " ko");?></p>
+                    <p><strong style="text-decoration: underline;">Taille de l'image:</strong><?php echo(" " . $val["taille_image"] . " octets");?></p>
                     <p><strong style="text-decoration: underline;">Chemin de l'image:</strong><?php echo(" " . $val["chemin_fichier"]); ?></p>
                 </div>
 
