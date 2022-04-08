@@ -60,7 +60,6 @@ if(!file_exists($cheminDest)){
     mkdir($cheminDest);
 }
 
-
 //affiche un message en tête de page suivant la réussite ou non de l'upload grâce à un paramètre présent dans l'url
 if(isset($_GET["uploadSuccess"])){
     switch($_GET["uploadSuccess"]){
@@ -80,9 +79,7 @@ if(isset($_GET["uploadSuccess"])){
             echo "<p style='text-align:center;background-color:lightblue;font-size:30px;'>L'ensemble des images du dossier ont été scannés.</p>";
             break;
     }
-
 }
-
 
 ?>
 
